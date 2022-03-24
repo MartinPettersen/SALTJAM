@@ -15,7 +15,7 @@ class ProductsIndex extends React.Component {
       <Layout location={this.props.location}>
         <Seo title="Products" />
         <Hero title="Products" />
-        <ProductPreview posts={posts}/>
+        <ProductPreview posts={posts} />
       </Layout>
     )
   }
