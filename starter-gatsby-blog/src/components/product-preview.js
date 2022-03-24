@@ -9,7 +9,7 @@ import * as styles from './article-preview.module.css'
 const ProductPreview = ({ posts }) => {
   if (!posts) return null
   if (!Array.isArray(posts)) return null
-  //test
+
   return (
     <Container>
       <ul className={styles.articleList}>
