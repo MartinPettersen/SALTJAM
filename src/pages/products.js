@@ -9,13 +9,13 @@ import ProductPreview from '../components/product-preview'
 
 class ProductsIndex extends React.Component {
   render() {
-    const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
+    const products = get(this, 'props.data.allContentfulProduct.nodes')
 
     return (
       <Layout location={this.props.location}>
         <Seo title="Products" />
         <Hero title="Products" />
-        <ProductPreview posts={posts} />
+        <ProductPreview products={products} />
       </Layout>
     )
   }
@@ -25,20 +25,10 @@ export default ProductsIndex
 
 export const pageQuery = graphql`
   query ProductsIndexQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulProduct {
       nodes {
+        price
         title
-        slug
-        publishDate(formatString: "MMMM Do, YYYY")
-        tags
-        heroImage {
-          gatsbyImageData(
-            layout: FULL_WIDTH
-            placeholder: BLURRED
-            width: 424
-            height: 212
-          )
-        }
         description {
           childMarkdownRemark {
             html

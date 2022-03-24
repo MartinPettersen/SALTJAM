@@ -6,29 +6,23 @@ import Container from './container'
 import Tags from './tags'
 import * as styles from './article-preview.module.css'
 
-const ProductPreview = ({ posts }) => {
-  if (!posts) return null
-  if (!Array.isArray(posts)) return null
+const ProductPreview = ({ products }) => {
+  if (!products) return null
+  if (!Array.isArray(products)) return null
 
   return (
     <Container>
       <ul className={styles.articleList}>
-        {posts.map((post) => {
+        {products.map((product) => {
           return (
-            <li key={post.slug}>
-              <Link to={`/blog/${post.slug}`} className={styles.link}>
-                <GatsbyImage alt="" image={post.heroImage.gatsbyImageData} />
-                <h2 className={styles.title}>{post.title}</h2>
-              </Link>
+            <li>
+                <h2 className={styles.title}>{product.title}</h2>
+                <p>{product.price}</p>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: post.description.childMarkdownRemark.html,
+                  __html: product.description.childMarkdownRemark.html,
                 }}
               />
-              <div className={styles.meta}>
-                <small className="meta">{post.publishDate}</small>
-                <Tags tags={post.tags} />
-              </div>
             </li>
           )
         })}
