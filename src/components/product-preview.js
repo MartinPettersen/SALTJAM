@@ -17,12 +17,12 @@ const ProductPreview = ({ products }) => {
           return (
             <li>
                 <h2 className={styles.title}>{product.title}</h2>
-                <p>{product.price}</p>
-              <div
+                <p>Price: <span>{product.price}</span>$</p>
+              <i><div
                 dangerouslySetInnerHTML={{
                   __html: product.description.childMarkdownRemark.html,
                 }}
-              />
+              /></i>
             </li>
           )
         })}
