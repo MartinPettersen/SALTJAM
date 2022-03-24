@@ -7,6 +7,8 @@ import Layout from '../components/layout'
 import Hero from '../components/hero'
 import ProductPreview from '../components/product-preview'
 
+// test 
+
 class ProductsIndex extends React.Component {
   render() {
     const products = get(this, 'props.data.allContentfulProduct.nodes')
