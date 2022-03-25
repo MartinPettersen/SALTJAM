@@ -30,6 +30,7 @@ export const pageQuery = graphql`
     allContentfulProduct {
       nodes {
         price
+        slug
         title
         description {
           childMarkdownRemark {

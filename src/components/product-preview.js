@@ -15,7 +15,7 @@ const ProductPreview = ({ products }) => {
       <ul className={styles.articleList}>
         {products.map((product) => {
           return (
-            <li>
+            <li key={product.slug}>
                 <h2 className={styles.title}>{product.title}</h2>
                 <p>Price: <span>{product.price}</span>$</p>
               <i><div
